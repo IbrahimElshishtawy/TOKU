@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:toku/screens/homePage.dart';
 
 void main() {
-  runApp(TOKU());
+  runApp(const TOKU());
 }
 
 class TOKU extends StatelessWidget {
+  const TOKU({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(backgroundColor: Colors.blue, title: Text('TOKU')),
-      ),
+
+        debugShowCheckedModeBanner: false,
+        home: Home(),
     );
   }
 }

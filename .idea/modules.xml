@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/TOKU.iml" filepath="$PROJECT_DIR$/.idea/TOKU.iml" />
+      <module fileurl="file://$PROJECT_DIR$/toku.iml" filepath="$PROJECT_DIR$/toku.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android/toku_android.iml" filepath="$PROJECT_DIR$/android/toku_android.iml" />
     </modules>
   </component>
 </project>
