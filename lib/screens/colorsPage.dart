@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class colorsPage extends StatelessWidget {
-  const colorsPage({super.key});
+class ColorsPage extends StatelessWidget {
+  const ColorsPage({super.key});
 
 
   @override

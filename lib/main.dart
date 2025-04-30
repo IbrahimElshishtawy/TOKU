@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:toku/screens/homePage.dart';
+import 'package:toku/screens/home_page.dart';
 
 void main() {
   runApp(const TOKU());
@@ -10,10 +10,6 @@ class TOKU extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-
-        debugShowCheckedModeBanner: false,
-        home: Home(),
-    );
+    return MaterialApp(debugShowCheckedModeBanner: false, home: Home());
   }
 }
