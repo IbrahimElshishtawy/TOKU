@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:toku/screens/number.dart' show NumbersPage;
 import 'package:toku/screens/colorsPage.dart';
-import 'package:toku/screens/phrases_page.dart';
 import 'Package:toku/screens/family_member_page.dart';
 
 class Home extends StatefulWidget {
@@ -13,20 +12,20 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   String textW = '';
-
   late Color colorW;
 
   @override
   Widget build(BuildContext context) => MaterialApp(
     debugShowCheckedModeBanner: false,
     home: Scaffold(
-      backgroundColor: Colors.brown,
+      backgroundColor:  Colors.brown,
       appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 146, 91, 33),
-        title: Text('TOKU'),
+        backgroundColor: const Color.fromARGB(255, 108, 72, 42),
+        title: Center(child: Text('TOKU', style: TextStyle(fontSize: 30, height: 1.5, color: Colors.white),)),
       ),
       body: Column(
         children: [
+          Spacer(flex: 1,),
           Category(
             onTap: () {
               Navigator.push(
@@ -41,13 +40,14 @@ class _HomeState extends State<Home> {
             textW: 'Number',
             colorW: const Color.fromARGB(255, 255, 186, 1),
           ),
+          Spacer(flex: 1,),
           Category(
             onTap: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(
                   builder: (BuildContext context) {
-                    return familyMemberPage();
+                    return FamilyMemberPage();
                   },
                 ),
               );
@@ -55,6 +55,7 @@ class _HomeState extends State<Home> {
             textW: 'Family Members',
             colorW: const Color.fromARGB(255, 32, 80, 23),
           ),
+          Spacer(flex: 1,),
           Category(
             onTap: () {
               Navigator.push(
@@ -69,21 +70,7 @@ class _HomeState extends State<Home> {
             textW: 'Colors',
             colorW: const Color.fromARGB(255, 33, 51, 85),
           ),
-          Category(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (BuildContext context) {
-                    return PhrasesPage();
-                  },
-                ),
-              );
-            },
-
-            textW: 'Phrases',
-            colorW: const Color.fromARGB(255, 179, 131, 66),
-          ),
+          Spacer(flex: 4,),
         ],
       ),
     ),
@@ -99,18 +86,27 @@ class Category extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
+    return Center(
       child: Container(
-        color: colorW,
-        alignment: Alignment.centerLeft,
-        padding: EdgeInsets.only(left: 5),
-        height: 65,
-        width: double.infinity,
-        child: Center(
-          child: Text(
-            '$textW',
-            style: TextStyle(fontSize: 30, height: 1.5, color: Colors.white),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20),
+          color: colorW,
+        ),
+        margin: EdgeInsets.all(10),
+        child: GestureDetector(
+          onTap: onTap,
+          child: Container(
+            color: colorW,
+            alignment: Alignment.centerLeft,
+            padding: EdgeInsets.only(left: 5),
+            height: 65,
+            width: double.infinity,
+            child: Center(
+              child: Text(
+                '$textW',
+                style: TextStyle(fontSize: 30, height: 1.5, color: Colors.white),
+              ),
+            ),
           ),
         ),
       ),
