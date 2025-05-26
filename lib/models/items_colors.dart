@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'models.dart';
 import 'package:just_audio/just_audio.dart';
 
+// ignore: camel_case_types
 class Items_colors extends StatefulWidget {
+  // ignore: non_constant_identifier_names
   const Items_colors({super.key, required this.color_I});
+  // ignore: non_constant_identifier_names
   final colors color_I;
   @override
   State<Items_colors> createState() => _ItemsState();

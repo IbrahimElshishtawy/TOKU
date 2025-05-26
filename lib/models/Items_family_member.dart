@@ -1,7 +1,12 @@
+// ignore: duplicate_ignore
+// ignore: file_names
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'models.dart';
 import 'package:just_audio/just_audio.dart';
 
+// ignore: camel_case_types
 class Items_family extends StatefulWidget {
   const Items_family({super.key, required this.family});
   final family_members family;

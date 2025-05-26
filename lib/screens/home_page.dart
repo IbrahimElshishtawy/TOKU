@@ -4,7 +4,7 @@ import 'package:toku/screens/colorsPage.dart';
 import 'package:toku/screens/family_member_page.dart';
 
 class Home extends StatefulWidget {
-  Home({super.key});
+  const Home({super.key});
 
   @override
   State<Home> createState() => _HomeState();
@@ -29,7 +29,7 @@ class _HomeState extends State<Home> {
         child: Column(
           children: [
             const SizedBox(height: 20),
-            // ✅ صورة فوق الزرائر
+
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: ClipRRect(
@@ -43,7 +43,7 @@ class _HomeState extends State<Home> {
               ),
             ),
             const SizedBox(height: 30),
-            // ✅ زرار Number
+
             Category(
               onTap: () {
                 Navigator.push(
@@ -99,11 +99,11 @@ class _HomeState extends State<Home> {
 }
 
 class Category extends StatelessWidget {
-  Category({super.key, this.textW, this.colorW, this.onTap});
+  const Category({super.key, this.textW, this.colorW, this.onTap});
 
-  String? textW;
-  Color? colorW;
-  Function()? onTap;
+  final String? textW;
+  final Color? colorW;
+  final Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -121,7 +121,11 @@ class Category extends StatelessWidget {
           width: double.infinity,
           child: Text(
             '$textW',
-            style: const TextStyle(fontSize: 30, height: 1.5, color: Colors.white),
+            style: const TextStyle(
+              fontSize: 30,
+              height: 1.5,
+              color: Colors.white,
+            ),
           ),
         ),
       ),
