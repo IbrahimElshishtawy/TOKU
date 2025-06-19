@@ -1,18 +1,20 @@
+// ignore: duplicate_ignore
+// ignore: file_names
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'models.dart';
 import 'package:just_audio/just_audio.dart';
 
 // ignore: camel_case_types
-class Items_colors extends StatefulWidget {
-  // ignore: non_constant_identifier_names
-  const Items_colors({super.key, required this.color_I});
-  // ignore: non_constant_identifier_names
-  final colors color_I;
+class Items_family extends StatefulWidget {
+  const Items_family({super.key, required this.family});
+  final family_members family;
   @override
-  State<Items_colors> createState() => _ItemsState();
+  State<Items_family> createState() => _ItemsState();
 }
 
-class _ItemsState extends State<Items_colors> {
+class _ItemsState extends State<Items_family> {
   late AudioPlayer player;
 
   @override
@@ -35,18 +37,18 @@ class _ItemsState extends State<Items_colors> {
       margin: const EdgeInsets.symmetric(vertical: 2),
       child: Row(
         children: [
-          SizedBox(width: 100, child: Image.asset(widget.color_I.imagecolors!)),
+          SizedBox(width: 100, child: Image.asset(widget.family.imagemembers!)),
           Padding(
             padding: const EdgeInsets.only(left: 20),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  widget.color_I.englishcolors!,
+                  widget.family.englishmembers!,
                   style: const TextStyle(color: Colors.white, fontSize: 22),
                 ),
                 Text(
-                  widget.color_I.japanesecolors!,
+                  widget.family.japanesememebers!,
                   style: const TextStyle(color: Colors.white, fontSize: 22),
                 ),
               ],
@@ -57,7 +59,7 @@ class _ItemsState extends State<Items_colors> {
             padding: const EdgeInsets.only(right: 20),
             child: IconButton(
               onPressed: () async {
-                await player.setAsset(widget.color_I.soundcolors!);
+                await player.setAsset(widget.family.soundmembers!);
                 await player.play();
               },
               icon: const Icon(Icons.play_arrow, color: Colors.white, size: 28),
